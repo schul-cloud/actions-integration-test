@@ -5,7 +5,7 @@ FROM golang:1.12.4
 COPY entrypoint.sh /entrypoint.sh
 
 # Make entrypoint executable
-RUN ["chmod", "550", "./entrypoint.sh"]
+RUN ["chmod", "550", "/entrypoint.sh"]
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["bash", "/entrypoint.sh"]
