@@ -1,0 +1,10 @@
+name: Greet
+on: [push]
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: greet
+        uses: schul-cloud/actions-integration-tests@master
+        with:
+          who-to-greet: 'Schul-Cloud'
