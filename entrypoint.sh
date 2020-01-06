@@ -22,9 +22,6 @@ switchBranch(){
 }
 
 fetch(){
-  # make switch branch script executable
-  chmod 700 ./switch_branch.sh
-
   # clone all required repositories and try to switch to branch with same name as current one
   git clone https://github.com/schul-cloud/nuxt-client.git nuxt-client
   switchBranch "nuxt-client"
