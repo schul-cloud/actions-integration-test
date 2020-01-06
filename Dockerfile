@@ -5,8 +5,8 @@ FROM ubuntu:xenial
 COPY --from=library/docker:latest /usr/local/bin/docker /usr/bin/docker
 COPY --from=docker/compose:latest /usr/local/bin/docker-compose /usr/bin/docker-compose
 RUN apt-get update && \
-    apt-get install -y git && \
-    apt-get install -y nodejs
+    apt-get install -y git nodejs
+
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
