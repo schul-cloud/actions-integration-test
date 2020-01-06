@@ -1,13 +1,13 @@
 # Container image that runs your code
 FROM node
 
-# Install docker and docker-compose
-COPY --from=library/docker:latest /usr/local/bin/docker /usr/bin/docker
-COPY --from=docker/compose:latest /usr/local/bin/docker-compose /usr/bin/docker-compose
+
+
 RUN apt-get update && \
-    apt-get install -y git
+    apt-get install -y git curl
 
-
+sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
 
