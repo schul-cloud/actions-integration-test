@@ -1,4 +1,4 @@
-#!/bin/sh -l
+#!/bin/bash
 
 export BRANCH_NAME=${$GITHUB_REF##*/}
 
