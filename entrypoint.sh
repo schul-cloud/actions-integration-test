@@ -1,8 +1,8 @@
 #!/bin/bash
 
 echo $GITHUB_REF
-ls -a
 export BRANCH_NAME=${GITHUB_REF##*/}
+echo $BRANCH_NAME
 
 _switchBranch(){
   cd $1
