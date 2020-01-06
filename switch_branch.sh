@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/sh -l
 
 cd $1
 echo "switching branch..."
