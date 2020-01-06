@@ -1,5 +1,5 @@
 # Container image that runs your code
-FROM spotify/alpine:latest
+FROM ubuntu:xenial
 
 # Install docker and docker-compose
 COPY --from=library/docker:latest /usr/local/bin/docker /usr/bin/docker
