@@ -6,9 +6,9 @@ export BRANCH_NAME=${GITHUB_REF##*/}
 switchBranch(){
   if [[ $BRANCH_NAME = release* || $BRANCH_NAME = hotfix* ]]
   then
-    bash switch_branch.sh "$1" "master"
+    bash ./switch_branch.sh "$1" "master"
   fi
-  bash switch_branch.sh "$1" "$BRANCH_NAME"
+  bash ./switch_branch.sh "$1" "$BRANCH_NAME"
 }
 
 fetch(){
