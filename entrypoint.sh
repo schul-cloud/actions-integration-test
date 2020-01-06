@@ -1,6 +1,6 @@
 #! /bin/bash
 
-export BRANCH_NAME=${$1##*/}
+export BRANCH_NAME=${$GITHUB_REF##*/}
 
 switchBranch(){
   if [[ $BRANCH_NAME = release* || $BRANCH_NAME = hotfix* ]]
