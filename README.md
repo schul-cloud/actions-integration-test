@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: integration-tests
-        uses: schul-cloud/actions-integration-tests
+        uses: schul-cloud/actions-integration-tests@master
       # upload buils artifacts
       - uses: actions/upload-artifact@v1
         with:
