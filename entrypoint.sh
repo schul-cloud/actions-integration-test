@@ -55,7 +55,7 @@ before(){
 
   # wait for the nuxt client to be available
   echo "waiting max 60s for nuxt to be available"
-  wait-on http://localhost:4000 -t 60000
+  wait-on http://localhost:4000 -t 120000
   echo "nuxt is now online"
 }
 
