@@ -1,4 +1,3 @@
-# action.yml
 name: 'Integration Tests'
 description: 'An GitHub Action to execute a full Schul-Cloud integration tests'
 runs:
