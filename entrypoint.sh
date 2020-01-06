@@ -4,12 +4,21 @@ echo $GITHUB_REF
 ls -a
 export BRANCH_NAME=${GITHUB_REF##*/}
 
+_switchBranch(){
+  cd $1
+  echo "switching branch..."
+  git checkout $2 > /dev/null 2>&1 || true
+  echo "(new) active branch for $1:"
+  git branch | grep \* | cut -d ' ' -f2
+  cd ..
+}
+
 switchBranch(){
   if [[ $BRANCH_NAME = release* || $BRANCH_NAME = hotfix* ]]
   then
-    bash ./switch_branch.sh "$1" "master"
+    _switchBranch "$1" "master"
   fi
-  bash ./switch_branch.sh "$1" "$BRANCH_NAME"
+  _switchBranch "$1" "$BRANCH_NAME"
 }
 
 fetch(){
