@@ -3,3 +3,8 @@ description: 'An GitHub Action to execute a full Schul-Cloud integration tests'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+services:
+  mongodb:
+    image: mongo:3.4.23
+    ports:
+      - 27017:27017
