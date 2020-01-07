@@ -3,7 +3,7 @@ FROM ubuntu:xenial
 
 # install dependencies
 RUN apt-get update && \
-    apt-get install -y wget curl git
+    apt-get install -y apt-transport-https ca-certificates wget curl git
 
 # mongo tools
 RUN wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | apt-key add -
