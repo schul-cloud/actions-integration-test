@@ -8,4 +8,4 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      - GITHUB_REF=develop
+      - GITHUB_REF=aj/integration-action
