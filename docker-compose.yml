@@ -9,4 +9,3 @@ services:
       dockerfile: Dockerfile
     environment:
       - GITHUB_REF=develop
-    command: bash entrypoint.sh
