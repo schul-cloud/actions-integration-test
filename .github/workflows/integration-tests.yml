@@ -5,9 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: integration-tests
-        uses: schul-cloud/actions-integration-tests@master
+        uses: ./
       # upload buils artifacts
-      - uses: ./
+      - uses: actions/upload-artifact@v1
         if: 1==1
         with:
           name: report
