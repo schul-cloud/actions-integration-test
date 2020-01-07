@@ -3,7 +3,7 @@ FROM ubuntu:xenial
 
 # install dependencies
 RUN apt-get update && \
-    apt-get install -y apt-transport-https ca-certificates wget curl git nodejs npm
+    apt-get install -y apt-transport-https ca-certificates wget curl git
 
 # mongo tools
 RUN wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | apt-key add -
@@ -14,11 +14,15 @@ RUN apt-get update && \
 RUN curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 RUN chmod +x /usr/local/bin/docker-compose
 # node
-# RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
-# run bash install.sh
-# RUN nvm install 10.18.0
-# RUN nvm use 10.18.0
-RUN node -v
+ENV NODE_VERSION=12.6.0
+RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+ENV NVM_DIR=/root/.nvm
+RUN . "$NVM_DIR/nvm.sh" && nvm install ${NODE_VERSION}
+RUN . "$NVM_DIR/nvm.sh" && nvm use v${NODE_VERSION}
+RUN . "$NVM_DIR/nvm.sh" && nvm alias default v${NODE_VERSION}
+ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
+RUN node --version
+RUN npm --version
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
