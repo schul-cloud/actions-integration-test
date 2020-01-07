@@ -2,8 +2,8 @@
 FROM ubuntu:xenial
 
 # install dependencies
-# mongo tools
-RUN wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | apt-key add -
+# git && mongo tools
+RUN curl -L https://www.mongodb.org/static/pgp/server-4.2.asc | apt-key add -
 RUN echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-4.2.list
 RUN apt-get update && \
     apt-get install -y git mongodb-org-tools
