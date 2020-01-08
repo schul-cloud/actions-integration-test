@@ -43,8 +43,8 @@ install(){
   npm install -g wait-on
 
   cd docker-compose
-  docker-compose -f docker-compose.integration-test.yml build --parallel
-  docker-compose -f docker-compose.integration-test.yml up -d
+  docker-compose -f docker-compose.integration-test.yml build --parallel server-mongodb server client nuxtclient selenium-hub chrome
+  docker-compose -f docker-compose.integration-test.yml up -d server-mongodb server client nuxtclient selenium-hub chrome
   cd ..
 
   cd integration-tests && npm ci && cd ..
