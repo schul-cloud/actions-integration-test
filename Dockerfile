@@ -29,6 +29,7 @@ ENV npm_config_user=root
 
 ENV IT_CLIENT_HOST=nuxtclient
 ENV IT_CLIENT_PORT=4000
+ENV SERVER_BACKUP_DEFAULT_URI=0.0.0.0:27017
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
