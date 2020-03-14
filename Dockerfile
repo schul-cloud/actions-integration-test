@@ -8,7 +8,7 @@ RUN apt-get update && \
 # mongo tools
 RUN wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | apt-key add -
 RUN echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-4.2.list
-RUN apt-get update && apt-get install mongodb-org-tools
+RUN apt-get update && apt-get install -y mongodb-org-tools
 
 # docker (compose)
 RUN curl -fsSL https://get.docker.com -o get-docker.sh
@@ -17,7 +17,7 @@ RUN curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-c
 RUN chmod +x /usr/local/bin/docker-compose
 
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
-RUN apt-get update && apt-get install nodejs
+RUN apt-get update && apt-get install -y nodejs
 
 # node
 # ENV NODE_VERSION=10.16.0
