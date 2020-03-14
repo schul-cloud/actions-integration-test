@@ -15,6 +15,10 @@ RUN curl -fsSL https://get.docker.com -o get-docker.sh
 RUN sh get-docker.sh
 RUN curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 RUN chmod +x /usr/local/bin/docker-compose
+
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
+RUN apt-get update && apt-get install nodejs
+
 # node
 # ENV NODE_VERSION=10.16.0
 # RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
