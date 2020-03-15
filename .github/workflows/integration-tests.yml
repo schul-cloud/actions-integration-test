@@ -4,13 +4,6 @@ jobs:
   integration-tests:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v1
+      - uses: actions/checkout@v1
       - name: integration-tests
         uses: ./
-      # upload buils artifacts
-      - uses: actions/upload-artifact@v1
-        if: 1==1
-        with:
-          name: report
-          path: reports
