@@ -1,0 +1,11 @@
+version: "3"
+
+# This compose file is for local testing
+
+services:
+  integration-tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - GITHUB_REF=aj/integration-action

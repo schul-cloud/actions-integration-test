@@ -1,4 +1,4 @@
-# 🚧 Currently WIP. Do not use! 🚧 
+# 🚧 Currently WIP. Do not use! 🚧
 # Integration Tests - GitHub Action
 
 An GitHub Action to execute a full Schul-Cloud integration tests
